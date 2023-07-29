@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+body {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+.login-container {
+  background-color: #7e7e7e;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(136, 104, 104, 0.2);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+.login-container h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form .form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 190px;
+}
+.login-form .form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.login-form .form-control input:focus,
+.login-form .form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+.login-form .form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+.login-form .form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.login-form .form-control input:focus+label span,
+.login-form .form-control input:valid+label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
+.login-form input[type="submit"] {
+  background-color: #3d118f4d;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.login-form input[type="submit"]:hover {
+  background-color: #930fa5bb;
+}
+.login-form .signup-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+.login-form .signup-link a {
+  color: #fff;
+  text-decoration: none;
+}
+.login-form .signup-link a:hover {
+  text-decoration: underline;
+}
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 80%;
+  transform: translate(0%, 5%);
+  object-fit: cover;
+}
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="Screenshot (31).png" alt="Logo">
+    </div>
+    <h2>Login</h2>
+    <form class="login-form">
+      <div class="form-control">
+        <input type="text" id="username" name="username" required>
+        <label for="username"><span>Username</span></label>
+      </div>
+      <div class="form-control">
+        <input type="password" id="password" name="password" required>
+        <label for="password"><span>Password</span></label>
+      </div>
+      <input type="submit" value="Login">
+      <div class="signup-link">
+        Don't have an account? <a href="signup.html" style="color: rgb(255, 255, 255); font-size: 14px;">Sign up</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

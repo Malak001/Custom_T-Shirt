@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom T-Shirts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">Custom-T</h1>
+    <div class="user-links top-right">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+    </div>
+  </header>
+  <main>
+    <section class="shirt-builder">
+      <div class="shirt-options">
+        <div class="shirt-option">
+          <label for="shirt-style">Shirt Style</label>
+          <select id="shirt-style">
+            <option value="None">None</option>
+            <option value="T-shirt">T-Shirt</option>
+            <option value="Polo">Polo</option>
+            <option value="hoodie">Hoodie</option>
+          </select>
+        </div>
+        <div class="shirt-option">
+          <label for="shirt-color">Shirt Color</label>
+          <select id="shirt-color">
+            <option value="None">None</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+          </select>
+        </div>
+        <div class="shirt-option">
+          <label for="shirt-size">Shirt Size</label>
+          <select id="shirt-size">
+            <option value="None">None</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="extra-large">Extra Large</option>
+          </select>
+        </div>
+      </div>
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <input type="submit" value="Upload">
+      </form>
+      <div class="shirt-preview">
+        <canvas id="canvas"></canvas>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/loaders/GLTFLoader.js"></script>
+      <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('canvas')});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        const loader = new THREE.GLTFLoader();
+        loader.load("shirt.gltf", function (gltf) {
+          scene.add(gltf.scene);
+          animate();
+        }, undefined, function (error) {
+          console.error(error);
+        });
+        camera.position.z = 5;
+        function animate() {
+          requestAnimationFrame(animate);
+          renderer.render(scene, camera);
+        }
+      </script>
+      <div class="shirt-options-horizontal">
+        <div class="item item-grab">
+          <div class="item-box">
+            <img src="Bleach_logo.jpg" class="item-img">
+          </div>
+          <div class="item-name">
+            drag & drop
+          </div>
+        </div>
+        <div class="item item-grab">
+          <div class="item-box">
+            <img src="Dragon_Ball_logo.webp" class="item-img">
+          </div>
+          <div class="item-name">
+            drag & drop
+          </div>
+        </div>
+        <div class="item item-grab">
+          <div class="item-box">
+            <img src="One-Piece-jolly-roger-stitched.png" class="item-img">
+          </div>
+          <div class="item-name">
+            drag & drop
+          </div>
+        </div>
+        <div class="item item-grab">
+          <div class="item-box">
+            <img src="png-transparent-light-yagami-mello-death-note-ryuk-others-leaf-text-logo.png" class="item-img">
+          </div>
+          <div class="item-name">
+            drag & drop
+          </div>
+        </div>
+      </div>
+      <div class="buy-shirt">
+        <a href="payment.html" class="buy-shirt">Buy Shirt</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a href="contact.html">Contact Us</a>
+    <div class="container">
+      <p>&copy; 2023 Design Your Own Embroidery Shirt</p>
+    </div>
+  </footer>
+</body>
+</html>

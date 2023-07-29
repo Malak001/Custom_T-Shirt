@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.user-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.user-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.logo {
+  max-width: 150px;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+h1.logo {
+  
+}
+h1 {
+  font-size: 25px;
+  text-align: center;
+}
+.user-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.user-links a {
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+.user-links a:hover {
+  background-color: #fff;
+  color: #333;
+}
+main {
+  padding: 20px;
+}
+.shirt-builder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+}
+.shirt-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.shirt-option label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.shirt-option select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+.shirt-preview {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#canvas {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+.shirt-options-horizontal {
+  display: flex;
+  justify-content: space-between;
+}
+.shirt-options-horizontal .item {
+  flex-basis: 24%;
+}
+.shirt-options-horizontal .item .item-box {
+  text-align: center;
+}
+.shirt-options-horizontal .item .item-img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.shirt-options-horizontal .item .item-name {
+  text-align: center;
+  margin-top: 5px;
+}
+.buy-shirt,
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 180px;
+  background-color: #0040ff4d;
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+  animation: animate 1.5s linear infinite;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.buy-shirt:hover {
+  background-color: #930fa5bb;
+}
+.button,
+.display,
+#msg {
+  transition: 0.3s;
+}
+.button:active .display {
+  background: rgba(255, 255, 255, 0.014);
+}
+.button:active .display #msg {
+  -webkit-text-fill-color: #ffffff00;
+}
+.button:hover {
+  scale: 1.15;
+  animation: animate 0.7s linear infinite;
+  transform: translateY(-15px);
+}
+.button .display,
+.button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button .display {
+  z-index: 1;
+  background-color: #1b1b1b;
+  height: 42.5px;
+  width: 172.5px;
+  border-radius: 20px;
+  text-align: center;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+.button .display #msg {
+  line-height: 42.5px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background-color: #b5b5db6b;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
